@@ -1,0 +1,11 @@
+.cache
+.editorconfig
+.nvmrc
+.github
+.vscode
+node_modules
+example
+scripts
+stories
+test
+tsconfig.json

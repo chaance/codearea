@@ -1,0 +1,253 @@
+:root {
+	--fz-root: 16px;
+	--fz-base: 0.9rem;
+	--fw-normal: 300;
+	--fw-bold: 500;
+	--lh-body: 1.5;
+	--lh-heading: 1.2;
+
+	--color-background: #111;
+	--color-foreground: #fff;
+	--color-accent: crimson;
+
+	--syntax-background: #222;
+	--syntax-comment: #666;
+	--syntax-punc: #9e9e9e;
+	--syntax-func: #f2879d;
+	--syntax-var: #f9a4a3;
+	--syntax-key: #e49eac;
+	--syntax-entity: #ff9f9e;
+	--syntax-string: #cbc3c2;
+	--syntax-const: #ee637f;
+
+	--block-gap: 1rem;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: var(--fz-root);
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: "IBM Plex Mono", Consolas, Menlo, Courier, monospace;
+	font-size: var(--fz-base);
+	line-height: var(--lh-body);
+	margin: 0;
+	padding: 0;
+	color: var(--color-foreground);
+	background: var(--color-background);
+	font-weight: var(--fw-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading);
+}
+
+p,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr {
+	margin-top: var(--block-gap);
+	margin-bottom: var(--block-gap);
+
+	@supports (margin-block-start: 1px) {
+		margin-top: initial;
+		margin-bottom: initial;
+		margin-block-start: var(--block-gap);
+		margin-block-end: var(--block-gap);
+	}
+}
+
+ol > ol,
+ul > ul {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	@supports (margin-block-start: 1px) {
+		margin-top: initial;
+		margin-bottom: initial;
+		margin-block-start: 0;
+		margin-block-end: 0;
+	}
+}
+
+hr {
+	display: block;
+	border: 0;
+	box-shadow: none;
+	height: 1px;
+	background: var(--color-foreground);
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.main__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 26rem;
+	max-width: calc(100% - 2rem);
+	text-align: center;
+}
+
+.main__content-header {
+	max-width: 22rem;
+}
+
+.main__editor-wrapper {
+	tab-size: 2ch;
+	margin: 1rem 0;
+}
+
+[data-codearea-shell]:focus,
+[data-codearea-shell]:focus-within {
+	outline: 2px solid var(--color-accent);
+}
+
+[data-codearea-shell]:focus *,
+[data-codearea-shell]:focus-within * {
+	outline: none;
+}
+
+[data-codearea-shell] {
+	font-size: 1em;
+	font-variant-ligatures: common-ligatures;
+	background-color: var(--syntax-background);
+}
+
+[data-codearea-focus-label] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.325em 0.65em;
+	color: #fff;
+	background: var(--color-accent);
+	z-index: 1;
+	font-weight: 800;
+}
+
+[data-codearea-field] {
+	outline: 0;
+}
+
+[data-codearea-field],
+[data-codearea-formatted] {
+	padding: 1rem;
+}
+
+.button {
+	display: inline-block;
+	font-size: var(--fz-base);
+	padding: 0.1em 0.5em;
+	text-decoration: none;
+	background: var(--color-foreground);
+	color: var(--color-background);
+	font-weight: var(--fw-bold);
+}
+
+.button:hover {
+	background: var(--color-accent);
+	color: var(--color-foreground);
+}
+
+.button:focus {
+	box-shadow: none;
+	outline: 2px solid var(--color-accent);
+}
+
+/* Syntax highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--syntax-comment);
+}
+
+.token.punctuation {
+	color: var(--syntax-punc);
+}
+
+.namespace {
+	opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--syntax-const);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--syntax-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: var(--syntax-entity);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: var(--syntax-key);
+}
+
+.token.function {
+	color: var(--syntax-func);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: var(--syntax-var);
+}
+
+.token.important,
+.token.bold {
+	font-weight: var(--fw-bold);
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}

@@ -1,0 +1,23 @@
+{
+	"name": "example",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "parcel index.html",
+		"build": "parcel build index.html"
+	},
+	"dependencies": {
+		"prismjs": "^1.20.0",
+		"styled-components": "^5.1.1"
+	},
+	"alias": {
+		"parcel": "../node_modules/parcel",
+		"react": "../node_modules/react",
+		"react-dom": "../node_modules/react-dom/profiling",
+		"scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+	},
+	"devDependencies": {
+		"sass": "^1.26.9"
+	}
+}
