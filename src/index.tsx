@@ -1071,8 +1071,7 @@ export {
 	CodeAreaShell,
 	styles,
 	stylesWithSelectors,
-};
-export type {
+	// Types
 	CodeAreaFieldProps,
 	CodeAreaFocusLabelProps,
 	CodeAreaFormattedProps,
