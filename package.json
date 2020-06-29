@@ -1,6 +1,6 @@
 {
 	"name": "codearea",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A simple, compound React component for editing code in a real field element.",
 	"keywords": [
 		"code",
