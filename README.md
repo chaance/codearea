@@ -134,7 +134,7 @@ function MyCodeBlock() {
 Import the stylesheet however you'd import any other styles in your project, and that's it! Make sure to add your customized styles later in the cascade for predictable results.
 
 ```js
-import "codearea/styles.css";
+import "codearea/dist/styles.css";
 ```
 
 ### With JavaScript
