@@ -212,29 +212,37 @@ The high-level single-component `CodeArea` accepts all the props accepted by `te
 ### `CodeArea` props
 
 #### `defaultValue?: string`
+
 Starting value of the text field. This must be used only in an [uncontrolled state](https://reactjs.org/docs/uncontrolled-components.html).
 
 #### `value?: string`
+
 Controlled value of the text field. This must be used only in an [controlled state](https://reactjs.org/docs/forms.html#controlled-components).
 
 #### `onValueChange?(newValue: string): void`
+
 Callback that fires when the value of the editor changes. For a controlled component, you'll need to update the `value` prop when this is called.
 
 #### `highlight?(value: string): string | React.ReactNode`
+
 Callback that receives the text value and returns with formatting applied. You'll need to return an HTML string or a React element with syntax highlighting using a library such as [`prismjs`](https://prismjs.com).
 
 #### `tabSize?: number`
+
 The number of characters to insert when pressing tab key. For example, for 4 space indentation, `tabSize` will be `4` and `insertSpaces` will be `true`. Defaults to `2`.
 
 #### `indentStyle?: "spaces" | "tab"`
+
 Whether to indent with spaces or a tab. Defaults to `"spaces"`. If set to `"tab"`, the `tabSize` prop will have no effect. Visual tab representation is best handled by styles.
 
 #### `indentOnTab?: boolean`
+
 Whether or not to auto-indent when the user presses <kbd>Enter</kbd> to move to a new line. Defaults to `true`.
 
 Note that this only works predictably when entering into a new block with C-like languages that use brackets to denote block openings and closings. To keep the package relatively lean, I have no intention of expanding this feature beyond its current capabilities at the moment.
 
 #### `id?: string`
+
 Because IDs are typically needed on text fields to pair them with a label, we forward the `id` prop along to the underlying `textarea` element. If you need an `id` on the wrapper element, use the lower level composed API.
 
 ### `CodeAreaShell` props
@@ -254,6 +262,7 @@ The `CodeAreaFocusLabel` renders the label that appears when focus lands on the 
 ### `CodeAreaField` props
 
 The `CodeAreaField` renders the visibly hidden `textarea` element. It forwards any props normally received by `textarea` except for:
+
 - `defaultValue`
 - `value`
 - `placeholder`
